@@ -1,0 +1,78 @@
+# Automation with Ansible Playbooks
+
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+- [Automation with Ansible Playbooks](#automation-with-ansible-playbooks)
+  - [Table of Contents](#table-of-contents)
+  - [Installing Ansible](#installing-ansible)
+
+## Installing Ansible
+[Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
+- Control node:
+A system on which Ansible is installed. You run Ansible commands such as ansible or ansible-inventory on a control node.
+
+- Managed node:
+A remote system, or host, that Ansible controls.
+
+- Inventory:
+A list of managed nodes that are logically organized. You create an inventory on the control node to describe host deployments to Ansible. 
+
+<img src="public/assets/images/ansible_basic.svg" alt="Basic components of an Ansible environment include a control node, an inventory of managed nodes, and a module copied to each managed node." width="266" height="321">
+
+
+```sh
+#Install python and python-pip
+sudo yum install -y amazon-linux-extras
+amazon-linux-extras | grep -i python
+sudo amazon-linux-extras enable python3.8
+sudo yum install python3.8
+
+
+#Install from source
+
+
+sudo yum -y update
+sudo yum -y groupinstall "Development Tools"
+sudo yum -y install openssl-devel bzip2-devel libffi-devel
+
+sudo yum -y install wget
+wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tg
+
+tar xvf Python-3.8.12.tgz
+cd Python-3.8*/
+./configure --enable-optimizations
+sudo make altinstall
+
+python3.8 --version
+
+#Setting Default Python
+sudo alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+
+#Confirm the new setting.
+sudo alternatives --list | grep python
+sudo alternatives --config python
+python -V
+python -m pip -V
+#If you see an error like No module named pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py --user
+
+#Install ansible using pip check for version
+python -m pip install  --user ansible
+ansible --version
+
+#Create a user called ansadmin & grant sudo access to ansadmin user using "visudo" command (on Control node and Managed host)
+useradd ansadmin
+passwd ansadmin
+echo "ansadmin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+#Log in as a ansadmin user on master and generate ssh key (on Control node)
+sudo su - ansadmin
+ssh-keygen
+#Copy keys onto all ansible managed hosts (on Control node)
+ssh-copy-id ansadmin@<target-server>
+#Validation test
+ansible all -m ping
+
+```
