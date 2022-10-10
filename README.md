@@ -5,9 +5,10 @@
 ## Table of Contents
 - [Automation with Ansible Playbooks](#automation-with-ansible-playbooks)
   - [Table of Contents](#table-of-contents)
+  - [What is Ansible?](#what-is-ansible)
   - [Installing Ansible](#installing-ansible)
 
-## Installing Ansible
+## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
 - Control node:
 A system on which Ansible is installed. You run Ansible commands such as ansible or ansible-inventory on a control node.
@@ -20,7 +21,7 @@ A list of managed nodes that are logically organized. You create an inventory on
 
 <img src="public/assets/images/ansible_basic.svg" alt="Basic components of an Ansible environment include a control node, an inventory of managed nodes, and a module copied to each managed node." width="266" height="321">
 
-
+## Installing Ansible
 ```sh
 #Install python and python-pip
 sudo yum install -y amazon-linux-extras
