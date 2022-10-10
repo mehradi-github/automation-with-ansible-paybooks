@@ -69,6 +69,7 @@ python get-pip.py --user
 #Install ansible using pip check for version
 python -m pip install  --user ansible
 ansible --version
+which ansible
 python -m pip show ansible
 
 #Create a user called ansadmin & grant sudo access to ansadmin user using "visudo" command (on Control node and Managed host)
@@ -90,5 +91,9 @@ ssh-copy-id ansadmin@<target-server>
 # Create a directory /etc/ansible and create an inventory file called "hosts" add control node and managed hosts IP addresses to it.
 vi /etc/ansible/hosts
 ansible all -m ping
+#Gathers facts about remote hosts
+ansible all -m setup
 
 ```
+
+More details: [Indexes of all modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html)
