@@ -30,4 +30,5 @@ def main():
 if __name__=="__main__":
    main()
 
+# ansible -i  sample-aws_dynamic_inv.py app -m ping 
 # ansible -i  sample-aws_dynamic_inv.py db --list-hosts  
