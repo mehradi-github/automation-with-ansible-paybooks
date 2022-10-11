@@ -1,12 +1,13 @@
 #!~/.local/bin/ansible-playbook
 ---
-  - host: all
+  - hosts: all
     vars: 
      x: 25
      name: "Alex"
     vars_prompt:
      - name: username
        prompt: Enter username
+       private: no
      - name: password
        prompt: Enter password
        private: yes
