@@ -7,6 +7,7 @@
   - [Table of Contents](#table-of-contents)
   - [What is Ansible?](#what-is-ansible)
   - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)
+  - [Ansible Playbooks](#ansible-playbooks)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -97,3 +98,17 @@ ansible all -m setup
 ```
 
 More details: [Indexes of all modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html)
+
+## Ansible Playbooks
+Some of important commands:
+
+```sh
+ansible-playbook input-and-outputs-of-ansible.yaml
+
+which ansible-playbook
+sudo chown +x input-and-outputs-of-ansible.yaml
+#!~/.local/bin/ansible-playbook
+./input-and-outputs-of-ansible.yaml
+
+
+```
