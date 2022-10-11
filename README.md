@@ -104,18 +104,19 @@ Some of important commands:
 
 ```sh
 which ansible-playbook
-sudo chmod +x input-and-outputs-of-ansible.yaml
+sudo chmod +x sample-playbook.yaml
 #!~/.local/bin/ansible-playbook
-./input-and-outputs-of-ansible.yaml 
+./sample-playbook.yaml 
 
 # --check Dry Run
-ansible-playbook input-and-outputs-of-ansible.yaml -e "y=2" --check
+ansible-playbook sample-playbook.yaml -e "y=2" --check
 # --extra-var via json
 
 echo "{'y':36}" >> vars.json
-ansible-playbook input-and-outputs-of-ansible.yaml -e "@vars.json" --check
+ansible-playbook sample-playbook.yaml -e "@vars.json" --check
 
 
-ansible-playbook input-and-outputs-of-ansible.yaml -e "{'y':2,'firstname':'alex'}" --check
+ansible-playbook sample-playbook.yaml -e "{'y':2,'firstname':'alex'}" --check
 
 ```
+More Details: [List Filters](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_filters.html#list-filters)
