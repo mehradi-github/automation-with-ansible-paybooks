@@ -1,34 +1,35 @@
 #!~/.local/bin/ansible-playbook
 ---
-  - hosts: all
+  - name: sample playbook
+    hosts: all
     vars: 
-     x: 25
-     z: 10
-     larger: "{{ x if ( x > z) else (z)}}"
-     name: "Alex"
+      x: 25
+      z: 10
+      name: "Alex"
     vars_prompt:
-     - name: username
-       prompt: Enter username
-       private: no
-     - name: password
-       prompt: Enter password
-       private: yes
+      - name: username
+        prompt: Enter username
+        private: no
+      - name: password
+        prompt: Enter password
+        private: yes
     gather_facts: yes
+    become: yes
     tasks:
-     - debug:
-        msg: 
-         - "username:{{username}}"
-         - "password:{{password}}"
-         - "ipv4: {{ansible_all_ipv4_addresses[0]}}"
-         - "extra-var:{{y}}"
-         - "first-name:{{firstname|title}}"
-         - "upper:{{firstname|upper}}"   
-         - "upper:{{firstname.upper()}}"   
-         - "The larger number of {{x}} and {{z}} is: {{larger}}"
-     - debug:   
-         msg:
-          - "When z > x , you will see this msg."
-         when: z > x
+      - debug:
+           msg: 
+           - "username:{{username}}"
+           - "password:{{password}}"
+           - "ipv4: {{ansible_all_ipv4_addresses[0]}}"
+           - "extra-var:{{y}}"
+           - "first-name:{{firstname|title}}"
+           - "upper:{{firstname|upper}}"   
+           - "upper:{{firstname.upper()}}"   
+           - "The larger number of {{x}} and {{z}} is: {{ x if ( x > z) else (z)}}"
+      - debug:   
+           msg:
+             - "When z > x , you will see this msg."
+           when: z > x
 
     
 
