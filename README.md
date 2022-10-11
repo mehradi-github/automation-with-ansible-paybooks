@@ -106,9 +106,9 @@ Some of important commands:
 ansible-playbook input-and-outputs-of-ansible.yaml
 
 which ansible-playbook
-sudo chown +x input-and-outputs-of-ansible.yaml
+sudo chmod +x input-and-outputs-of-ansible.yaml
 #!~/.local/bin/ansible-playbook
-./input-and-outputs-of-ansible.yaml
+./input-and-outputs-of-ansible.yaml --check
 
 
 ```
