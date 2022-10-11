@@ -1,0 +1,18 @@
+---
+  - host: all
+    vars: 
+     x: 25
+     name: "Alex"
+    vars_prompt:
+     - name: username
+       prompt: Enter username
+     - name: password
+       prompt: Enter password
+       private: yes
+    gather_facts: yes
+    tasks:
+    - debug:
+       msg: "The username is:{{username}} and password is :{{password}} and one IP {{ansible_all_ipv4_addresses[0]}}"   
+
+    
+
