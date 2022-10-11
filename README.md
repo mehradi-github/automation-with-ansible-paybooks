@@ -103,12 +103,13 @@ More details: [Indexes of all modules and plugins](https://docs.ansible.com/ansi
 Some of important commands:
 
 ```sh
-ansible-playbook input-and-outputs-of-ansible.yaml
-
 which ansible-playbook
 sudo chmod +x input-and-outputs-of-ansible.yaml
 #!~/.local/bin/ansible-playbook
-./input-and-outputs-of-ansible.yaml -e "y=2" --check
+./input-and-outputs-of-ansible.yaml 
 
+# --extra-var via json
+# --check Dry Run
+ansible-playbook input-and-outputs-of-ansible.yaml -e "{'y':2}" --check
 
 ```
