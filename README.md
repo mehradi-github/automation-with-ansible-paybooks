@@ -112,4 +112,7 @@ sudo chmod +x input-and-outputs-of-ansible.yaml
 # --check Dry Run
 ansible-playbook input-and-outputs-of-ansible.yaml -e "{'y':2}" --check
 
+echo "{'y':36}" >> vars.json
+ansible-playbook input-and-outputs-of-ansible.yaml -e "@vars.json" --check
+
 ```
