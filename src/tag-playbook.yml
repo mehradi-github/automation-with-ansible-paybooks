@@ -3,29 +3,29 @@
     hosts: localhost
     gather_facts: false
     tasks:
-      - debug:
+      - ansible.builtin.debug:
           msg: "This is a first task"
         tags:
           - first
           - common
           - always
-      - debug:
+      - ansible.builtin.debug:
           msg: "This is a second task"
         tags:
           - second
           - never
-      - debug:
+      - ansible.builtin.debug:
           msg: "This is a third task"
         tags:
           - third
           - common
           - never
-      - debug:
+      - ansible.builtin.debug:
           msg: "This is a fourth task"
         tags:
           - fourth
           - never
-      - debug:
+      - ansible.builtin.debug:
           msg: "This is a fifth task"
         tags:
           - fifth

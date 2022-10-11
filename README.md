@@ -1,9 +1,9 @@
-# Automation with Ansible Playbooks
+# Automation with Ansible playbooks
 
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-- [Automation with Ansible Playbooks](#automation-with-ansible-playbooks)
+- [Automation with Ansible playbooks](#automation-with-ansible-playbooks)
   - [Table of Contents](#table-of-contents)
   - [What is Ansible?](#what-is-ansible)
   - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)

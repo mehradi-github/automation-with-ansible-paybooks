@@ -4,10 +4,22 @@
     become: yes
     tasks:
     - name: Add several users
-    ansible.builtin.user:
-      name: "{{ item.name }}"
-      state: present
-      groups: "{{ item.groups }}"
-    loop:
-      - { name: 'testuser1', groups: 'wheel' }
-      - { name: 'testuser2', groups: 'root' }
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        state: present
+        groups: "{{ item.groups }}"
+      loop:
+        - { name: 'testuser1', groups: 'wheel' }
+        - { name: 'testuser2', groups: 'root' }
+
+    - name: Remove several packages
+      ansible.builtin.yum:
+         name: "{{item}}"
+         state: absent
+      loop:
+          - gettext-devel
+          - openssl-devel
+          - perl-CPAN
+          - perl-devel
+          - zlib-devel  
+      

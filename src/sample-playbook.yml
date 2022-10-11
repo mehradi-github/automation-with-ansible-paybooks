@@ -17,7 +17,7 @@
     gather_facts: yes
     become: yes
     tasks:
-      - debug:
+      - ansible.builtin.debug:
            msg: 
            - "username:{{username}}"
            - "password:{{password}}"
@@ -27,19 +27,19 @@
            - "upper:{{firstname|upper}}"   
            - "upper:{{firstname.upper()}}"   
            - "The larger number of {{x}} and {{z}} is: {{larger}}"
-      - debug:   
+      - ansible.builtin.debug:   
            msg:
              - "When z > x , you will see this msg."
         when: z > x
       - name: Installing httpd
-        yum:
+        ansible.builtin.yum:
           name: httpd
           state: present
         notify:
           - start httpd
     handlers:
       - name: start httpd
-        service: 
+        ansible.builtin.service: 
           name: httpd
           state: started
 
