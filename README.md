@@ -116,6 +116,6 @@ echo "{'y':36}" >> vars.json
 ansible-playbook input-and-outputs-of-ansible.yaml -e "@vars.json" --check
 
 
-ansible-playbook input-and-outputs-of-ansible.yaml -e "{'y':2,'first-name':'alex'}" --check
+ansible-playbook input-and-outputs-of-ansible.yaml -e "{'y':2,'firstname':'alex'}" --check
 
 ```

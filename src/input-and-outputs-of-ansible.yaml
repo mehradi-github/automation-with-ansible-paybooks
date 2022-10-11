@@ -14,7 +14,14 @@
     gather_facts: yes
     tasks:
     - debug:
-       msg: "The username is:{{username}} and password is :{{password}} . ipv4: {{ansible_all_ipv4_addresses[0]}} and extra-var:{{y}} and first-name:{{first-name|title}} Or {{first-name|upper}}"   
+       msg: 
+        - "The username is:{{username}}"
+        - "password is :{{password}}"
+        - "ipv4: {{ansible_all_ipv4_addresses[0]}}"
+        - "extra-var:{{y}}"
+        - "first-name:{{firstname|title}}"
+        - "upper:{{firstname|upper}}"   
+        - "upper:{{firstname.upper()}}"   
 
     
 
