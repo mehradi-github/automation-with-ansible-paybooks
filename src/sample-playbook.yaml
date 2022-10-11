@@ -5,6 +5,7 @@
     vars: 
       x: 25
       z: 10
+      larger: "{{ x if ( x > z) else (z)}}"
       name: "Alex"
     vars_prompt:
       - name: username
@@ -25,11 +26,11 @@
            - "first-name:{{firstname|title}}"
            - "upper:{{firstname|upper}}"   
            - "upper:{{firstname.upper()}}"   
-           - "The larger number of {{x}} and {{z}} is: {{ x if ( x > z) else (z)}}"
+           - "The larger number of {{x}} and {{z}} is: {{larger}}"
       - debug:   
            msg:
              - "When z > x , you will see this msg."
-           when: z > x
+        when: z > x
 
     
 
