@@ -14,7 +14,7 @@
     gather_facts: yes
     tasks:
     - debug:
-       msg: "The username is:{{username}} and password is :{{password}} and one IP {{ansible_all_ipv4_addresses[0]}}"   
+       msg: "The username is:{{username}} and password is :{{password}} \n ipv4: {{ansible_all_ipv4_addresses[0]}} and extra-var:{{y}}"   
 
     
 

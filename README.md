@@ -108,7 +108,7 @@ ansible-playbook input-and-outputs-of-ansible.yaml
 which ansible-playbook
 sudo chmod +x input-and-outputs-of-ansible.yaml
 #!~/.local/bin/ansible-playbook
-./input-and-outputs-of-ansible.yaml --check
+./input-and-outputs-of-ansible.yaml -e "y=2" --check
 
 
 ```
