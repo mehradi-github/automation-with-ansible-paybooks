@@ -31,6 +31,18 @@
            msg:
              - "When z > x , you will see this msg."
         when: z > x
+      - name: Installing httpd
+        yum:
+          name: httpd
+          state: present
+        notify:
+          - start httpd
+    handlers:
+      - name: start httpd
+        service: 
+          name: httpd
+          state: started
+
 
     
 

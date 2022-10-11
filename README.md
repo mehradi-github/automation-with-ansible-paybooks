@@ -8,6 +8,8 @@
   - [What is Ansible?](#what-is-ansible)
   - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)
   - [Ansible playbooks](#ansible-playbooks)
+    - [Handlers: running operations on change](#handlers-running-operations-on-change)
+    - [Notifying handlers](#notifying-handlers)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -120,3 +122,8 @@ ansible-playbook sample-playbook.yaml -e "{'y':2,'firstname':'alex'}" --check
 
 ```
 More Details: [List Filters](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_filters.html#list-filters)
+### Handlers: running operations on change
+Sometimes you want a task to run only when a change is made on a machine. For example, you may want to restart a service if a task updates the configuration of that service, but not if the configuration is unchanged. Ansible uses **[handlers](https://docs.ansible.com/ansible/latest/user_guide/playbooks_handlers.html)** to address this use case. Handlers are tasks that only run when notified.
+
+### Notifying handlers
+Tasks can instruct one or more handlers to execute using the notify keyword. The notify keyword can be applied to a task and accepts a list of handler names that are notified on a task change. Alternately, a string containing a single handler name can be supplied as well. The following example demonstrates how multiple handlers can be notified by a single task:
