@@ -13,6 +13,7 @@
     - [Loops](#loops)
     - [Import a task list](#import-a-task-list)
     - [Delegating tasks](#delegating-tasks)
+    - [Template](#template)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -147,3 +148,8 @@ If you want to perform a task on one host with reference to other hosts, use the
 There is also a shorthand syntax that you can use on a per-task basis: **local_action**. Using the shorthand syntax for delegating to 127.0.0.1
 
 **run_once:** boolean that will bypass the host loop, forcing the task to attempt to execute on the first host available and afterwards apply any results and facts to all active hosts in the same batch.
+
+### Template
+[ansible.builtin.template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) module – Template a file out to a target host
+
+
