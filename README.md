@@ -12,6 +12,7 @@
     - [Notifying handlers](#notifying-handlers)
     - [Loops](#loops)
     - [Import a task list](#import-a-task-list)
+    - [Delegating tasks](#delegating-tasks)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -140,3 +141,9 @@ Ansible offers the **[loop](https://docs.ansible.com/ansible/latest/user_guide/p
 ### Import a task list
   - [ansible.builtin.import_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/import_tasks_module.html) module – Import a task list
   - [ansible.builtin.include_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html) module – Dynamically include a task list
+
+### Delegating tasks
+If you want to perform a task on one host with reference to other hosts, use the [delegate_to](https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html) keyword on a task.
+There is also a shorthand syntax that you can use on a per-task basis: **local_action**. Using the shorthand syntax for delegating to 127.0.0.1
+
+**run_once:** boolean that will bypass the host loop, forcing the task to attempt to execute on the first host available and afterwards apply any results and facts to all active hosts in the same batch.
