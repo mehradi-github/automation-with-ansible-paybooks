@@ -15,6 +15,7 @@
     - [Delegating tasks](#delegating-tasks)
     - [Template](#template)
     - [Vault](#vault)
+    - [Roles](#roles)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -169,5 +170,14 @@ ansible-playbook vault-playbook.yml  --vault-password-file mypass
 ansible-playbook vault-playbook.yml  --vault-id mypass
 # ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 
-
 ```
+### Roles
+[Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html) let you automatically load related vars, files, tasks, handlers, and other Ansible artifacts based on a known file structure. After you group your content in roles, you can easily reuse them and share them with other users.
+
+Using the [ansible-galaxy](https://galaxy.ansible.com/docs/contributing/creating_role.html#creating-roles) command line tool that comes bundled with Ansible, you can create a role with the init command. 
+
+```sh
+ansible-galaxy init test-role-1 --offline
+```
+
+
