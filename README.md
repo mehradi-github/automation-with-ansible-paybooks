@@ -11,6 +11,7 @@
     - [Handlers: running operations on change](#handlers-running-operations-on-change)
     - [Notifying handlers](#notifying-handlers)
     - [Loops](#loops)
+    - [Import a task list](#import-a-task-list)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -135,3 +136,7 @@ Sometimes you want a task to run only when a change is made on a machine. For ex
 Tasks can instruct one or more handlers to execute using the notify keyword. The notify keyword can be applied to a task and accepts a list of handler names that are notified on a task change. Alternately, a string containing a single handler name can be supplied as well. The following example demonstrates how multiple handlers can be notified by a single task:
 ### Loops
 Ansible offers the **[loop](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html)**, with_<lookup>, and until keywords to execute a task multiple times.
+
+### Import a task list
+  - [ansible.builtin.import_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/import_tasks_module.html) module – Import a task list
+  - [ansible.builtin.include_tasks](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html) module – Dynamically include a task list
