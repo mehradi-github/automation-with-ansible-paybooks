@@ -1,0 +1,40 @@
+---
+  - hosts: web_servers
+    gather_facts: true
+    tasks:
+      - block:
+        - name: Installing htttpd for RedHat os family
+          ansible.builtin.yum:
+            name: httpd
+            state: present
+        - name: starting httpd for RedHat os family
+          ansible.builtin.service:
+            name: httpd
+            state: started
+        when: ansible_os_family=="RedHat"
+        become: yes
+      - block:
+        - name: Installing apache2 for Debian os family
+          ansible.builtin.yum:
+            name: apache2
+            state: present
+        - name: starting apache2 for Debian os family
+          ansible.builtin.service:
+            name: apache2
+            state: started
+        when: ansible_os_family=="Debian"
+        become: yes
+
+      - block:
+        - name: Finding files in /home/ansadmin/tomcat8
+          ansible.builtin.command: "ls /home/ansadmin/tomcat8"
+          register: tomcat8_out
+        rescue:
+          - ansible.builtin.debug:
+             msg: "The given path: /home/ansadmin/tomcat8 is not a validpath"
+        always:
+          - ansible.builtin.debug:
+             msg: "THis will always executes"
+
+      - ansible.builtin.debug:
+          msg: "Succesfully completed all tasks"
