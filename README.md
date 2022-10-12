@@ -14,6 +14,7 @@
     - [Import a task list](#import-a-task-list)
     - [Delegating tasks](#delegating-tasks)
     - [Template](#template)
+    - [Vault](#vault)
 
 ## What is Ansible?
 [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) automates the management of remote systems and controls their desired state.A basic Ansible environment has three main components:
@@ -153,3 +154,20 @@ There is also a shorthand syntax that you can use on a per-task basis: **local_a
 [ansible.builtin.template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) module – Template a file out to a target host
 
 
+### Vault
+Ansible Vault encrypts variables and files so you can protect sensitive content such as passwords or keys rather than leaving it visible as plaintext in playbooks or roles. To use Ansible Vault you need one or more passwords to encrypt and decrypt content. If you store your vault passwords in a third-party tool such as a secret manager, you need a script to access them. Use the passwords with the [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) command-line tool to create and view encrypted variables, create encrypted files, encrypt existing files, or edit, re-key, or decrypt files. You can then place encrypted content under source control and share it more safely.
+
+```sh
+ansible-vault -h
+ansible-vault create keys.yml
+ansible-vault view keys.yml
+ansible-vault edit keys.yml
+ansible-vault rekey keys.yml
+
+ansible-playbook vault-playbook.yml  --ask-vault-pass
+ansible-playbook vault-playbook.yml  --vault-password-file mypass
+ansible-playbook vault-playbook.yml  --vault-id mypass
+# ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
+
+
+```

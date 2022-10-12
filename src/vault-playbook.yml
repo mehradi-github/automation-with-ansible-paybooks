@@ -1,0 +1,8 @@
+---
+  - name: ansible-vault playbook
+    hosts: localhost
+    vars_files: keys.yml
+    gather_facts: false
+    tasks:
+      - ansible.builtin.debug:
+           msg: "username:{{username}}"
