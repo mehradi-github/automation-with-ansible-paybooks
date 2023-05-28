@@ -132,6 +132,10 @@ Some of important commands:
 
 ```sh
 which ansible-playbook
+# Generating ansible.cfg
+ansible-config init --disabled > ansible.cfg
+ansible-config init --disabled -t all > ansible.cfg
+
 sudo chmod +x sample-playbook.yml
 #!~/.local/bin/ansible-playbook
 ./sample-playbook.yml 
