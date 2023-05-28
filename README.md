@@ -6,7 +6,9 @@
 - [Automation with Ansible](#automation-with-ansible)
   - [Table of Contents](#table-of-contents)
   - [What is Ansible?](#what-is-ansible)
-  - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)
+  - [Installing Ansible](#installing-ansible)
+    - [Installing Ansible on Ubuntu](#installing-ansible-on-ubuntu)
+    - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)
   - [Ansible playbooks](#ansible-playbooks)
     - [Handlers: running operations on change](#handlers-running-operations-on-change)
     - [Notifying handlers](#notifying-handlers)
@@ -30,7 +32,20 @@ A list of managed nodes that are logically organized. You create an inventory on
 
 <img src="public/assets/images/ansible_basic.svg" alt="Basic components of an Ansible environment include a control node, an inventory of managed nodes, and a module copied to each managed node." width="266" height="321">
 
-## Installing Ansible on Amazon Linux 2
+
+## Installing Ansible 
+- [Installing Ansible from PyPI using pip](https://github.com/mehradi-github/ref-python#installing-packages-using-pip)
+- [Installing Ansible on specific operating systems](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html)
+
+### Installing Ansible on Ubuntu
+```sh
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+```
+
+### Installing Ansible on Amazon Linux 2
 ```sh
 
 python -V
