@@ -147,7 +147,8 @@ ansible-playbook sample-playbook.yml -e "y=2" --check
 echo "{'y':36}" >> vars.json
 ansible-playbook sample-playbook.yml -e "@vars.json" --check
 
-
+# -k, --ask-pass: ask for connection password
+# -K, --ask-become-pass: ask for privilege escalation password
 ansible-playbook sample-playbook.yml -e "{'y':2,'firstname':'alex'}" --check
 
 #tags
