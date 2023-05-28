@@ -197,6 +197,7 @@ ansible-playbook vault-playbook.yml  --vault-id mypass
 Using the [ansible-galaxy](https://galaxy.ansible.com/docs/contributing/creating_role.html#creating-roles) command line tool that comes bundled with Ansible, you can create a role with the init command. 
 
 ```sh
+which ansible-galaxy
 ansible-galaxy init test-role-1 --offline
 ```
 
