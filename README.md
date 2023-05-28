@@ -36,8 +36,11 @@ A list of managed nodes that are logically organized. You create an inventory on
 
 
 ## Installing Ansible 
-### [Installing Ansible from PyPI using pip](https://github.com/mehradi-github/ref-python#installing-packages-using-pip)
-### [Installing Ansible on specific operating systems](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html)
+### Installing Ansible from PyPI using pip
+The ansible package can always be installed from PyPI [using pip](https://github.com/mehradi-github/ref-python#installing-packages-using-pip) on most systems but it is also packaged and maintained by the community for a variety of Linux distributions. [more detailes](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#intro-installation-guide).
+
+### Installing Ansible on specific operating systems
+Installing Ansible on specific operating systems: [Fedora, CentOS, Debian, Ubuntu, Windows](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html)
 
 #### Installing Ansible on Ubuntu
 ```sh
