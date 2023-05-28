@@ -172,7 +172,7 @@ There is also a shorthand syntax that you can use on a per-task basis: **local_a
 **run_once:** boolean that will bypass the host loop, forcing the task to attempt to execute on the first host available and afterwards apply any results and facts to all active hosts in the same batch.
 
 ### Template
-[ansible.builtin.template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) module – Template a file out to a target host
+[ansible.builtin.template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) module – [Template](https://jinja.palletsprojects.com/en/3.1.x/) a file out to a target host
 
 
 ### Vault
