@@ -7,8 +7,10 @@
   - [Table of Contents](#table-of-contents)
   - [What is Ansible?](#what-is-ansible)
   - [Installing Ansible](#installing-ansible)
-    - [Installing Ansible on Ubuntu](#installing-ansible-on-ubuntu)
-    - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)
+    - [Installing Ansible from PyPI using pip](#installing-ansible-from-pypi-using-pip)
+    - [Installing Ansible on specific operating systems](#installing-ansible-on-specific-operating-systems)
+      - [Installing Ansible on Ubuntu](#installing-ansible-on-ubuntu)
+      - [Installing Ansible on Amazon Linux 2](#installing-ansible-on-amazon-linux-2)
   - [Ansible playbooks](#ansible-playbooks)
     - [Handlers: running operations on change](#handlers-running-operations-on-change)
     - [Notifying handlers](#notifying-handlers)
@@ -34,10 +36,10 @@ A list of managed nodes that are logically organized. You create an inventory on
 
 
 ## Installing Ansible 
-- [Installing Ansible from PyPI using pip](https://github.com/mehradi-github/ref-python#installing-packages-using-pip)
-- [Installing Ansible on specific operating systems](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html)
+### [Installing Ansible from PyPI using pip](https://github.com/mehradi-github/ref-python#installing-packages-using-pip)
+### [Installing Ansible on specific operating systems](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html)
 
-### Installing Ansible on Ubuntu
+#### Installing Ansible on Ubuntu
 ```sh
 sudo apt update
 sudo apt install software-properties-common
@@ -45,7 +47,7 @@ sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-### Installing Ansible on Amazon Linux 2
+#### Installing Ansible on Amazon Linux 2
 ```sh
 
 python -V
